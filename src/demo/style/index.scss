@@ -1,0 +1,7 @@
+@import '../../styles/global-import.scss';
+@include theme {
+  .msg {
+    color: $colorText;
+  }  
+}
+

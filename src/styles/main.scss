@@ -1,0 +1,34 @@
+@import "./theme/default";
+
+$dt: map_get($theme-default, '');
+
+@function getvar($key) {
+  @if (map_has_key($globalTheme, $key)) {
+    @return map-get($globalTheme, $key);
+  } @else {
+    @return map-get($dt, $key);
+  }
+}
+
+@mixin generateThemeContent($name,$theme) {
+  $globalTheme: $theme !global;
+  $globalThemeName: $name !global;
+  $colorPrimary: getvar(colorPrimary) !global;
+  $colorSuccess: getvar(colorSuccess) !global;
+  $colorWarn: getvar(colorWarn) !global;
+  $colorError: getvar(colorError) !global;
+  $colorInfo: getvar(colorInfo) !global;
+  $colorBg: getvar(colorBg) !global;
+  $colorText: getvar(colorText) !global;
+
+  @if (str_length($name)>0) {
+    [data-dcm-theme="#{$name}"] {
+      @content;
+    }
+  } @else {
+    html {
+      @content;
+    }
+  }
+}
+

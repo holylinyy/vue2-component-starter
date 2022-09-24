@@ -1,0 +1,38 @@
+<script setup lang="ts">
+import DcmDemo from '../../src/demo'
+
+</script>
+
+<template>
+  <div id="play">
+    <dcm-demo />
+  </div>
+ 
+</template>
+
+<style lang="scss">
+@import '../../src/styles/global-import.scss';
+@include theme {
+  #play {
+    height: 100%;
+    width: 100%;
+    background-color: $colorBg;
+    .play-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+html,
+body {
+  
+ 
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+ 
+}
+</style>
