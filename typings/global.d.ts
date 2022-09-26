@@ -3,3 +3,6 @@ declare module '*.vue' {
   export default Vue;
 }
 declare const __VERSION__: string;
+
+declare module '*.png'
+declare module '*.jpg'
